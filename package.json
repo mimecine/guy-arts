@@ -10,26 +10,26 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/netlify": "^6.3.2",
+        "@astrojs/netlify": "^6.3.3",
         "@astrojs/react": "^4.2.7",
         "@fontsource-variable/inter": "^5.2.5",
         "@fontsource/lexend-giga": "^5.2.7",
         "@netlify/blobs": "^8.2.0",
         "@netlify/functions": "^2.8.2",
-        "@tailwindcss/vite": "^4.1.5",
+        "@tailwindcss/vite": "^4.1.7",
         "@types/react": "^18.3.21",
         "@types/react-dom": "^18.3.7",
-        "astro": "^5.7.12",
+        "astro": "^5.7.13",
         "blobshape": "^1.0.0",
         "marked": "^13.0.3",
         "marked-shiki": "^1.2.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "tailwindcss": "^4.1.5",
+        "tailwindcss": "^4.1.7",
         "unique-names-generator": "^4.7.1"
     },
     "devDependencies": {
         "@types/blobshape": "^1.0.3",
-        "@types/node": "^20.17.46"
+        "@types/node": "^20.17.48"
     }
 }

@@ -1,0 +1,60 @@
+backend:
+    name: github
+    repo: mimecine/guy-arts
+    branch: main # Branch to update (optional; defaults to master)
+
+media_folder: 'src/assets/img'
+public_folder: '/src/assets/img'
+editor:
+    preview: false
+
+output:
+    #   omit_empty_optional_fields: false
+    #   json:
+    #     indent_style: space # or tab
+    #     indent_size: 2
+    yaml:
+        quote: single # or single or double
+        # indent_size: 2
+
+collections:
+    - name: things
+      label: Things
+      label_singular: Thing
+      folder: src/content/things
+      identifier_field: handle
+      create: true
+      summary: '{{title}} - ${{price | currency }}'
+      slug: '{{title}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Hidden', name: 'hidden', widget: 'boolean', default: false }
+          - { label: 'Materials', name: 'materials', widget: 'string', required: false }
+          - { label: 'Dimensions', name: 'dimensions', widget: 'string', required: false }
+          - { label: 'Price', name: 'price', widget: 'number', required: false }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - { label: 'Image', name: 'image', widget: 'image', required: true }
+          - {
+                label: 'Images',
+                name: 'images',
+                widget: 'list',
+                required: false,
+                fields:
+                    [
+                        { label: 'Image', name: 'src', widget: 'image' },
+                        { label: 'Alt', name: 'alt', widget: 'string', required: false },
+                        { label: 'Caption', name: 'caption', widget: 'string', required: false }
+                    ]
+            }
+
+    - name: pages
+      identifier_field: handle
+      label: Pages
+      label_singular: Page
+      folder: src/content/pages
+      create: true
+      summary: '{{title}}'
+      slug: '{{title}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string', required: true }
+          - { label: 'Body', name: 'body', widget: 'markdown', required: true }

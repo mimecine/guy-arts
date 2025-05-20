@@ -1,0 +1,32 @@
+---
+import { type CollectionEntry, getCollection, getEntry, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+    let things = await getCollection('things');
+    return things
+        .filter((thing) => thing.data.hidden !== true)
+        .map((thing) => ({
+            params: { slug: thing.id },
+            props: thing
+        }));
+}
+type Props = CollectionEntry<'things'>;
+
+const thing = Astro.props;
+const { Content } = await render(thing);
+---
+
+<Layout title={thing.data.title}>
+    <div class="grid place-content-center">
+        <figure class="w-full max-w-2xl">
+            <Image src={thing.data.image} alt={thing.data.title} class="w-full max-w-2xl rounded-lg shadow-lg" />
+            <figcaption class="text-center text-sm text-gray-500"></figcaption>
+        </figure>
+        <div class="prose prose-slate max-w-2xl">
+            <h1>{thing.data.title}</h1>
+            <Content />
+        </div>
+    </div>
+</Layout>

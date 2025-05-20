@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import { marked } from 'marked';
+
+let things = (await getCollection('things')).filter((thing) => thing.data.hidden !== true);
+---
+
+<Layout title="GUY SIMONE ARTS - Things">
+    <div class="grid place-content-center">
+        <h1 class="text-3xl font-bold text-center">Things</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {
+                things.map((thing) => (
+                    <div data-key={thing.slug} class="p-4">
+                        <a href={`/things/${thing.id}`}>
+                            <figure class="w-full max-w-2xl">
+                                <Image src={thing.data.image} alt={thing.data.title} class="w-full max-w-2xl rounded-lg shadow-lg" />
+                                <figcaption class="text-center text-sm text-gray-500">{thing.data.title}</figcaption>
+                            </figure>
+                            <h2 class="text-xl font-semibold">{thing.data.title}</h2>
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</Layout>
