@@ -1,5 +1,5 @@
 ---
-title: 'Steel thing'
+title: 'Steel things'
 hidden: false
 materials: 'Steels'
 dimensions: '56, 79, 23'
