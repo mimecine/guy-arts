@@ -5,16 +5,10 @@ import Markdown from '../components/Markdown.astro';
 import GiacomettiStudio from '../assets/giacomettis-studio-1024x675.jpg';
 import { Image } from 'astro:assets';
 
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
 ---
 
 <Layout title="GUY SIMONE ARTS">
-    <div class="grid place-items-center w-full h-full max-w-5xl m-auto">
+    <div class="grid place-content-center">
         <figure class="w-full max-w-2xl">
             <Image src={GiacomettiStudio} alt="Giacometti Studio" class="w-full max-w-2xl xrounded-lg xshadow-lg" />
             <figcaption class="xtext-center text-sm text-gray-500">Studio Giacometti par Robert Doisneau.</figcaption>
