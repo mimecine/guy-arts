@@ -2,6 +2,7 @@ backend:
     name: github
     repo: mimecine/guy-arts
     branch: main # Branch to update (optional; defaults to master)
+    base_url: https://cms-auth.mimecom.workers.dev/
 
 media_folder: 'src/assets/img'
 public_folder: '/src/assets/img'
