@@ -1,25 +1,29 @@
 media:
-  input: src/assets/img
-  output: ../../assets/img
+    input: src/assets/img
+    output: ../../assets/img
 
 content:
-  - name: posts
-    label: Posts
-    type: collection
-    path: 'src/content/posts'
-    view:
-      fields: [ title, published, date ]
-    fields:
-      - name: published
-        label: Published
-        type: boolean
-        default: true
-      - name: date
-        label: Date
-        type: date
-      - name: title
-        label: Title
-        type: string
-      - name: body
-        label: Body
-        type: rich-text
+    - name: posts
+      label: Posts
+      type: collection
+      path: 'src/content/posts'
+      view:
+          fields: [title, published, date]
+      fields:
+          - name: published
+            label: Published
+            type: boolean
+            default: true
+          - name: date
+            label: Date
+            type: date
+          - name: title
+            label: Title
+            type: string
+          - name: image
+            label: Image
+            type: image
+            required: false
+          - name: body
+            label: Body
+            type: rich-text

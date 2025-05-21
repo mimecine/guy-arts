@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import { marked } from 'marked';
+
+let posts = await getCollection('posts');
+---
+
+<Layout title="GUY SIMONE ARTS - Posts">
+    <div class="grid place-content-center">
+        <h1 class="text-3xl font-bold text-center">Posts</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {
+                posts.map((post) => (
+                    <div data-key={post.id} class="p-4">
+                        <a href={`/posts/${post.id}`}>
+                            {(post.data.image && (
+                                <figure class="w-full max-w-2xl">
+                                    <Image src={post.data.image} alt={post.data.title} class="w-full max-w-2xl rounded-lg shadow-lg" />
+                                    <figcaption class="text-center text-sm text-gray-500">{post.data.title}</figcaption>
+                                </figure>
+                            )) ||
+                                post.data.title}
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</Layout>; ---

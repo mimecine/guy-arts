@@ -1,0 +1,26 @@
+---
+import { type CollectionEntry, getCollection, getEntry, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+    let posts = await getCollection('posts');
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: post
+    }));
+}
+type Props = CollectionEntry<'posts'>;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+    <div class="grid place-content-center">
+        <div class="prose prose-slate max-w-2xl">
+            <h1>{post.data.title}</h1>
+            <Content />
+        </div>
+    </div>
+</Layout>
