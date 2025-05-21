@@ -5,18 +5,13 @@ backend:
     base_url: https://cms-auth.mimecom.workers.dev/
 
 media_folder: 'src/assets/img'
-public_folder: '/src/assets/img'
+public_folder: '../../assets/img'
 editor:
     preview: false
 
 output:
-    #   omit_empty_optional_fields: false
-    #   json:
-    #     indent_style: space # or tab
-    #     indent_size: 2
     yaml:
-        quote: single # or single or double
-        # indent_size: 2
+        quote: single
 
 collections:
     - name: things
