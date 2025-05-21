@@ -1,9 +1,9 @@
 ---
 title: 'Fourth'
 published: true
-image: '/src/assets/img/PXL_20230920_075958017.jpg'
+image: '@assets/img/PXL_20220727_041809535.PORTRAIT.jpg'
 date: '2025-05-21T16:29:00'
 ---
 aaa
 
-![](/src/assets/img/Profile_Marco.jpg)
+![](@assets/img/PXL_20221029_165058280.jpg)
